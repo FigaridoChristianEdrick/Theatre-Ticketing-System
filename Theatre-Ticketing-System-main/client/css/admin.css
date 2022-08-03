@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:wght@500&family=Permanent+Marker&family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:wght@500&family=Permanent+Marker&family=Poppins&family=Roboto+Mono:wght@500&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+.side{
+	display: flex;
+	flex-direction: column;
+}
+.left, .right{ 
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+}
+.left{
+	width: 100%;
+	height: 220px;
+	background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.2)), url('../images/bgd.png');
+	object-fit: cover;
+	background-size: cover;
+	background-position: center;
+}
+#lftt{
+	display: none;
+}
+form {
+	width: 380px;
+	border-radius: 12px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) scale(.3);
+	opacity: 0;
+	z-index: 100;
+	transition: all .5s ease;
+	transition-delay: 0s;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+form.active {
+	transform: translateY(-50%);
+	opacity: 1;
+	z-index: 200;
+	transition-delay: .3s;
+}
+form .right-box h1{
+	margin-top: 15px;
+	text-align: center;
+	font-size: 35px;
+	color: #35b876;
+}
+form .right-container{
+	margin-top: -20px;
+	border-radius: 10px;
+}
+form .right-group{
+	position: relative;
+	border: 2px solid #35b876;
+  	border-radius: 5px;
+  	font-size: 16px;
+  	margin: 30px auto;
+  	width: 90%;
+}
+form .right-group input{
+	font-weight: 500;
+	font-size: 15px;
+	height: 45px;
+	width: 100%;
+	background: none;
+	outline: none;
+	border: none;
+	padding: 0 15px;	
+}
+form .right-group span i{
+    content: "";
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	transform: translateY(-50%);
+    top: 50%;
+	font-size: 20px;
+	color: rgba(0, 0 , 0, 0.6);
+	transition: 0.6s;
+	display: block;
+}
+form .right-group span i.hide:before{
+	content: "\f070";
+    color: rgb(26, 26, 26);
+}
+form .right-group label{
+	position: absolute;
+  	top: 12px;
+  	left: 20px;
+  	outline: none;
+	background-color: rgba(255, 255, 255, 1) !important;
+  	color: #808080;
+  	font-size: 14px;
+ 	padding: 0 5px;
+  	pointer-events: none;
+  	font-size: 15px;
+  	transition: all 0.4s ease-in-out;
+}
+form .right-group:hover{
+	transition: 0.5s;
+	border: 2px solid rgba(53, 184, 118, 0.4) !important;
+}
+form .right-group input:focus ~ label,
+form .right-group input:valid ~ label{
+	transform: translateY(-24px);
+	left: 5px;
+	color: #000;
+	font-size: 12px;
+	font-weight: 500;
+}
+form .right-image{
+	width: 100%;
+	margin: 30px auto;
+	text-align: center;
+}
+form .right-image img{
+	height: 70px !important;
+	width: 200px !important;
+	border-radius: 20%;	
+}
+form .right-image p{
+	margin-bottom: 70px;
+	color: #35b876;
+	font-weight: 650;
+	margin-top: 20px;
+}
+form .right-button{
+	margin: 0 auto;
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+form .right-button input{
+	padding: 11px 30px;
+	border-radius: 5px;
+	background: rgba(53, 184, 118, 0.9);
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+form .right-button input:hover{
+	background: #35b876;
+}
+form .right-button a{
+	line-height: 40px;
+	color: #35b876;
+	text-decoration: none;
+}
+form .right-button a:hover{
+	color: rgba(53, 184, 118, 0.7);
+	border-bottom: 1px solid #35b876;
+}
+form .right-button input{
+	padding: 11px 30px;
+	border-radius: 5px;
+	border: 2px solid #35b876;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+form .right-button:nth-child(1){
+	margin-right: 5px;
+}
+form .right-button select{
+	border: 2px solid #35b876;
+	width: 50%;
+	padding: 10px;
+	outline: none;
+	font-size: 12px;
+}
+form .right-button input:hover{
+	background: rgba(53, 184, 118, 0.2);
+}
+form .right-button a,
+form .right-buttom a{
+	line-height: 40px;
+	color: #35b876;
+	text-decoration: none;
+	transition: all 0.4s ease;
+	font-size: 14px;
+}
+form .right-button a:hover,
+form .right-buttom a:hover{
+	color: rgba(0, 0, 0, 1);
+	border-bottom: 1px solid #35b876;
+}
+form .right-buttom{
+	text-align: center;
+	margin-bottom: 30px;
+	width: 100%;
+	margin-top: 30px;
+}
+form .right-buttom p{
+	color: rgb(175, 175, 175, 1);
+	font-weight: 650;
+	font-size: 14px;
+}
+form .right-buttom a{	
+	font-size: 18px !important;
+}
+@media screen and (max-width: 480px){
+	.left{
+		height: 150px !important;
+	}
+	.right-box{
+		margin-top: -150px !important;
+	}
+}
+@media screen and (max-width: 500px){
+	.right-image p{
+		margin-bottom: -20px !important;
+	}
+	.right form{
+		margin-top: 165px !important;
+		}
+	form{
+		background-color: #fff !important;
+		width: 100% !important;
+		box-shadow: none !important;
+	}
+	form .right-image img{
+		height: 60px !important;
+		width: 160px !important;
+		border-radius: 20%;	
+	}
+}
+@media screen and (max-width: 780px){
+	form .right-group label{
+		background-color: rgba(247, 247, 247, 1) !important;
+	}
+	form{
+		background-color: #F7F7F7 !important;
+		margin-top: 130px !important;
+	}
+}
+@media screen and (min-width: 780px), (min-width: 850px){
+	.side{
+		flex-direction: row;
+	}
+	.left{
+		width: 70%;
+		height: 100vh;
+	}
+	.right form{
+	border-radius: 10px;
+	background-color: #fff;
+	}
+	#pt, #ptt{
+		position: absolute;
+		top: 50%;
+		left: 70%;
+		transform: translate(-50%, -50%);
+	}
+}
+@media screen and (min-width: 900px), (min-width: 1214px){
+	.left{
+		width: 57%;
+		position: relative;
+	}
+	#lft{
+		display: flex;;
+		position: absolute;
+		top: 0;
+		height: 100vh;
+	}
+	#lft1{
+		display: flex;;
+		position: absolute;
+		top: 0;
+		height: 100vh;
+	}
+	.right{
+		width: 43%;
+	}
+	form{
+		box-shadow: none !important;
+	}
+	#pt, #ptt{
+		position: absolute;
+		top: 50%;
+		left: 78.5%;
+		transform: translate(-50%, -50%);
+	}
+	.left, .right{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+@media screen and (min-width: 1215px), (min-width: 1300px){
+	.left{
+		width: 65%;
+		max-height: 100vh !important;
+		overflow: hidden !important;
+		position: relative;
+	}
+	#pt, #ptt{
+		position: absolute;
+		top: 50%;
+		left: 83% !important;
+		transform: translate(-50%, -50%);
+	}
+	.right{
+		width: 35%;
+	}
+	#pt, #ptt{
+		position: absolute;
+		right: 40px;
+	}
+	.right form{
+		box-shadow: none !important;
+	}
+	form .right-image img{
+		height: 120px;
+	}
+	form .right-box h1{
+		margin-top: -20px;
+		margin-bottom: 30px;
+	}
+}
+
+@media screen and (min-width: 1301px), (min-width: 1500px){
+	.left{
+		width: 70%;
+	}
+	.right{
+		width: 30%;
+	}
+	.right form{
+		box-shadow: none;
+	}
+	#pt, #ptt{
+		position: absolute;
+		top: 50%;
+		left: 85% !important;
+		transform: translate(-50%, -50%);
+	}
+	.left, .right{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
